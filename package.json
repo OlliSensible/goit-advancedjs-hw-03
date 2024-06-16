@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch ",
+    "build": "vite build --base=/goit-advancedjs-hw-03/",
     "preview": "vite preview"
   },
   "devDependencies": {

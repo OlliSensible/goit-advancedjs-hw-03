@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch ",
-    "build": "vite build --base=/goit-advancedjs-hw-03/",
+    "build": "vite build --base=/goit-advancedjs-hw-03.01/",
     "preview": "vite preview"
   },
   "devDependencies": {

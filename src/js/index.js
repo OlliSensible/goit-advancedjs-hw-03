@@ -26,6 +26,7 @@ function renderCatInfo(id) {
     .then(({ data: [cat] }) => {
       elements.catInfo.innerHTML = getCatInfoCardHTML(cat);
       hideLoader();
+      elements.breedsList.classList.remove('hidden'); 
     })
     .catch(err => {
       hideLoader();
@@ -62,6 +63,7 @@ function getCatInfoCardHTML(cat) {
 
 function showLoader() {
   elements.loader.classList.remove('hidden');
+  elements.breedsList.classList.add('hidden'); 
 }
 
 function hideLoader() {
@@ -69,10 +71,6 @@ function hideLoader() {
 }
 
 function showApiError(err) {
-  iziToast.show({
-    color: 'red',
-    title: 'Ooops! An error occured',
-    message: `${err.name}: ${err.message}`,
-    position: 'topRight',
-  });
+  elements.catInfo.innerHTML = '<p class="text-red-500 text-center text-3xl pt-40">Oops! We did not find the cat you requested 😢</p>';
+  elements.breedsList.classList.remove('hidden'); 
 }
